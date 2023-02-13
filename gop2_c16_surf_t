@@ -1,0 +1,80 @@
+DIMENSION      6              # number of variables
+
+BB_EXE         "$/home/hpaliwal/soft/python/Python-2.7.6/build/bin/python  krsna_t4_rc.py"         # 'bb.exe' is a program that
+##BB_OUTPUT_TYPE OBJ EB EB    # takes in argument the name of
+BB_OUTPUT_TYPE OBJ EB EB EB EB EB   # takes in argument the name of
+                              # a text file containing 5
+                              # values, and that displays 3
+                              # values that correspond to the
+                              # objective function value (OBJ),
+                              # and two constraints values g1
+                              # and g2 with g1 <= 0 and
+                              # g2 <= 0; 'PB' and 'EB'
+                              # correspond to constraints that
+                              # are treated by the Progressive
+                              # and Extreme Barrier approaches
+                              # (all constraint-handling
+                              #  options are described in the
+                              #  detailed parameters list)
+
+# Several starting points
+
+X0             (0.08956567 1.81400774 0.01517680 -1.27044796 0.31647900 0.84002111)
+
+# from 1-5000 bar hd search t2, t2-vns, t4-vns
+
+
+X0             (0.08935802 1.82127344 0.01515383 -1.27055475 0.31633834 0.82608920)
+X0             (0.08936037 1.82126469 0.01515589 -1.27058584 0.31633472 0.82650610)
+X0             (0.08936096 1.82125951 0.01515609 -1.27061584 0.31633425 0.82658200)
+X0             (0.08923535 1.82019414 0.01491285 -1.26873755 0.31628007 0.83393139)
+
+X0             (0.08672000 1.81731289 0.01578172 -1.34649823 0.31645626 0.84998706)
+X0             (0.08664300 1.81258289 0.01558972 -1.34326823 0.31642174 0.85798706)
+X0             (0.08644400 1.81869289 0.01554472 -1.35275823 0.31642974 0.86098705)
+X0             (0.08680000 1.81466289 0.01585772 -1.34955823 0.31641574 0.85498706)
+X0             (0.08578163 1.80176000 0.01683872 -1.39600000 0.31637500 0.86200000)
+X0             (0.08689200 1.81030289 0.01579872 -1.34476823 0.31635675 0.85498706)
+X0             (0.08682400 1.81391289 0.01577072 -1.34753823 0.31638561 0.84698706)
+X0             (0.08942720 1.81499601 0.01542735 -1.27970320 0.31633440 0.87280200)
+X0             (0.08924000 1.81622399 0.01544650 -1.28550000 0.31632000 0.87350200)
+X0             (0.08724000 1.80816111 0.01594000 -1.35820000 0.31666000 0.89030000)
+X0             (0.08664400 1.80655289 0.01565772 -1.36726823 0.31620174 0.89598706)
+X0             (0.08724	1.80816110506613 0.01594 -1.3582 0.31666 0.8903) # OPC
+X0             (0.1 1.91061193215819 0 -0.82 0.3166 0.65) # SPC
+X0             (0.1 1.91061193215819 0 -0.8476 0.3166 0.65) # SPC/E
+X0             (0.09572 1.82421813418447 0 -0.834 0.315061 0.6364) # TIP3P
+X0             (0.09572 1.82421813418447 0.015 -1.04 0.315365 0.648) # TIP4P
+X0             (0.09572 1.82421813418447 0.0125 -1.04844 0.316435 0.680946) # TIP4P-Ew
+X0             (0.09572 1.82421813418447 0.01546 -1.1128 0.31589 0.7749) # TIP4P-2005
+X0             (0.09789 1.91061193215819 0 -0.8952 0.317427 0.68369) # OPC-3
+
+LOWER_BOUND    ( 0.085 1.70 0.0000 -1.4 0.29 0.60 )           # all variables are 
+UPPER_BOUND    ( 0.110 2.00 0.0300 -0.8 0.33 0.95 )  # 
+
+MAX_BB_EVAL    1000          # the algorithm terminates when
+                              # 100 black-box evaluations have
+                              # been made
+							  
+TMP_DIR        "/home/hpaliwal/PhD_backup/working_PhD_water_exercise_scripts/water_p_sweep/scripts/optscan/jobdir2/0of2/"       # indicates a directory where
+                              # temporary files are put
+                              # (increases performance by ~100%
+                              # if you're working on a network
+                              # account and if TMP_DIR is on a
+                              # local disk)
+
+HISTORY_FILE   t7_t1_vns_ts100
+
+    
+DISPLAY_DEGREE 2
+
+VNS_SEARCH 0.75
+###VNS_SEARCH 0.05
+
+# DISPLAY_ALL_EVAL yes
+
+
+DISPLAY_STATS BBE ( SOL ) OBJ # Display the number of evaluation (BBE),
+							  # the current solution ( SOL ) and the objective
+
+# STATS_FILE test.txt BBE ( SOL ) OBJ

@@ -1,0 +1,3 @@
+This folder has input files required to run simulations for any water model described in the paper. 
+The Lsolv_template.top is a general template file. The values required to complete the template can be found in Force_field_parameters.xls file.
+There is gro file and also min.mdp, eq.mdp and run.mdp file which are required to run gromacs md simulation

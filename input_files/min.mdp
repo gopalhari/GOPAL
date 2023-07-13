@@ -1,0 +1,104 @@
+ VARIOUS PREPROCESSING OPTIONS =
+include                  =
+define                   =
+
+; RUN CONTROL PARAMETERS =
+integrator               = steep
+;integrator               = lbfgs
+; start time and timestep in ps =
+;tinit                    = 0
+;dt                       = 0.002
+nsteps                   = 50000
+;frequency of performing 1 steepest descent step while doing conjugate gradient energy minimization
+nstcgsteep               = 10
+;minimization parameters
+emtol                    = 100
+emstep                   = 0.1
+
+; mode for center of mass motion removal =
+comm-mode                = Linear
+; number of steps for center of mass motion removal =
+nstcomm                  = 1
+; group(s) for center of mass motion removal =
+comm-grps                =
+
+; OUTPUT CONTROL OPTIONS =
+; Output frequency for coords (x), velocities (v) and forces (f) =
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+; Output frequency for energies to log file and energy file =
+nstlog                   = 100
+nstenergy                = 100
+; Output frequency and precision for xtc file =
+nstxtcout                = 0
+xtc-precision            = 1000
+
+; NEIGHBORSEARCHING PARAMETERS =
+; nblist update frequency =
+nstlist                  = 1
+; ns algorithm (simple or grid) =
+ns_type                  = grid
+; Periodic boundary conditions: xyz or no =
+pbc                      = xyz
+; nblist cut-off         =
+rlist                    = 1.25
+
+; OPTIONS FOR ELECTROSTATICS AND VDW =
+; Method for doing electrostatics =
+coulombtype              = PME-Switch
+rcoulomb-switch          = 0.98
+rcoulomb                 = 1.2
+; Dielectric constant (DC) for cut-off or DC of reaction field =
+epsilon-r                = 1
+; Method for doing Van der Waals =
+vdw-type                 = Switch
+; cut-off lengths        =
+rvdw-switch              = 0.95
+rvdw                     = 1.2
+; Apply long range dispersion corrections for Energy and Pressure =
+DispCorr                 = EnerPres
+; Spacing for the PME/PPPM FFT grid =
+fourierspacing           = 0.12
+; EWALD/PME/PPPM parameters =
+pme_order                = 4
+ewald_rtol               = 1e-05
+ewald_geometry           = 3d
+epsilon_surface          = 0
+
+;; Groups to couple separately =
+;tc-grps                  = System
+;; Time constant (ps) and reference temperature (K) =
+;tau_t                    = 5.0
+;ref_t                    = 300
+;; Pressure coupling      =
+;Pcoupl                   = Parrinello-Rahman
+;
+;; Time constant (ps), compressibility (1/bar) and reference P (bar) =
+;tau_p                    = 5.0
+;compressibility          = fillkappa
+;ref_p                    = 1.01325
+;
+;; GENERATE VELOCITIES FOR STARTUP RUN =
+;gen_vel                  = yes
+;gen_temp                 = 300
+;gen_seed                 = 12
+
+; OPTIONS FOR BONDS     =
+;constraints              = none
+constraints              = h-bonds
+; Type of constraint algorithm =
+;ConstAlg             = Shake
+constraint-algorithm     = Lincs
+; Highest order in the expansion of the constraint coupling matrix =
+lincs-order              = 12
+
+; Free energy control stuff =
+;free-energy              = yes
+;sc-alpha                 = 0.5
+;sc-power                 = 1
+;sc-r-power               = 6
+;init-lambda-state        = 0
+;coul-lambdas             = 0.0 0.2 0.5 1.0 1.0 1.0 1.0 1.0 1.0
+;vdw-lambdas              = 0.0 0.0 0.0 0.0 0.2 0.4 0.6 0.8 1.0
+

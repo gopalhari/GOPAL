@@ -3,8 +3,6 @@
 1               1              yes             0.5     0.5
 ; comb-rule 3 is square-root sigma, the OPLSAA version
 
-;#include "ffoplsaa.itp"
-
 [ atomtypes ]
 ;name  at.num        mass      charge  ptype       c6           c12
  opls_113  OW      15.99940     0.000       A    fillC6olam    fillC12olam
@@ -52,8 +50,9 @@ SOL		2
 
 [ system ]
 ; Name
-water in water
+box of water
+
 [ molecules ]
-; Compound             #mols
+; Compound         #mols
 
 SOL                521

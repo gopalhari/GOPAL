@@ -1,7 +1,7 @@
 # GOPAL
 Scripts used for parameterizing GOPAL (Gibbs Optimized Potential for Atomistic simulation of Liquid water)
 
-The most important scripts developed for carrying out the water model parameterization have been shared. Future users can use these scripts to build their own versions as these scripts are written in python 2.X and for doing water model parameterization. Some of the scripts like the IAPWS95 implementation (in getexp.py) and ideal gas corrections (in get_corr.py) can be used directly.  
+The most important scripts developed for carrying out the water model parameterization have been shared. Note the scripts are written in python 2.X and for Some of the scripts like the IAPWS95 implementation (in getexp.py) and ideal gas corrections (in get_corr.py) can be used directly.  
 
 * krsna_t4_rc_final.py : Code used for running optimization 
 * getexp.py : code for IAPWS95 implementation  
